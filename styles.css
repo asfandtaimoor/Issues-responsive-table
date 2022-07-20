@@ -1,0 +1,194 @@
+/* general styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  /* font-family: "Open Sans", sans-serif; */
+  /* font-family: "Open Sans", sans-serif; */
+  line-height: 1.25;
+}
+
+table {
+  /* border: 1px solid #ccc; */
+  /* border: 1px solid #ccc; */
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-weight: bold;
+  color: #16182c;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+  text-align: left;
+  font-weight: bold;
+}
+
+table tr {
+  /* background-color: #f8f8f8; */
+  border: none;
+  /* border: 1px solid #ddd; */
+  padding: 0.35em;
+}
+
+table th {
+  white-space: nowrap;
+}
+table th,
+table td {
+  padding: 1rem 0.625rem;
+  text-align: start;
+  /* min-height: 15px; */
+  font-weight: bold;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.table__link {
+  color: #00008b;
+}
+
+.table__assignee {
+  background-color: #edecf1;
+}
+.table__assignee td {
+  /* font-weight: 500; */
+  text-align: left;
+}
+
+.badge {
+  background-color: red;
+  padding: 3px 8px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.badge--todo {
+  background-color: #e5f0ff;
+  color: #5566f6;
+}
+.badge--review {
+  background-color: #fef5cf;
+  color: #fd9f09;
+}
+.badge--inprogress {
+  background-color: #fee0e7;
+  color: #fc0006;
+}
+.priority-wrapper {
+  position: relative;
+  min-height: 17.98px;
+}
+.priority {
+  position: relative;
+  width: 20px;
+  height: 3px;
+  top: 8px;
+  /* background-color: red; */
+}
+.priority::after,
+.priority::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-color: inherit;
+}
+.priority::before {
+  top: -6px;
+}
+.priority::after {
+  bottom: -6px;
+}
+.priority--low {
+  background-color: #169bf5;
+  top: 5px;
+}
+
+.priority--low::before,
+.priority--low::after {
+  display: none;
+}
+.priority--normal {
+  background-color: #181818;
+  top: 5px;
+}
+
+.priority--normal::before {
+  display: none;
+}
+
+.priority--heigh {
+  background-color: #ca0006;
+}
+
+@media screen and (max-width: 1400px) {
+  table {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    /* border-bottom: 3px solid #ddd; */
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    /* border-bottom: 1px solid #ddd; */
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  .priority {
+    margin-left: auto;
+  }
+}
+
+/* .priority--heigh {
+  background-color: #ca0006;
+} */
